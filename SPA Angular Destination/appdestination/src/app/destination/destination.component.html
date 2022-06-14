@@ -1,0 +1,11 @@
+<h2>Destination list</h2>
+<ul>
+    <li *ngFor="let d of destinations">
+        {{d.name}}
+        <button routerLink="/destination-edit/{{d.destination_id}}">Edit</button>
+        <button (click)="deleteDestination(d.destination_id)">Delete</button>
+    </li>
+</ul>
+<div>
+    <button (click)="add()">ADD</button>
+</div>

@@ -1,0 +1,372 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/ECAM/Agence/1.0.0
+info:
+  description: An API for tourism agencies
+  version: "1.0.0"
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  title: Travel API
+tags:
+  - name: Client
+    description: General operations available for clients
+  - name: Admin
+    description: General operations available for admin user
+paths:
+  /agency:
+    get:
+      tags:
+        - Admin
+        - Client
+      summary: seraches travel agencies
+      operationId: searchAgencies
+      description: |
+        By passing in the appropriate options, you can search for
+        available travel agency in the system
+      parameters:
+        - in: query
+          name: name
+          description: pass direclty the name of a travel agency
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: mail
+          description: mail
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: phone
+          description: phone
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: adress
+          description: adress
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Affiliated'
+        '400':
+          description: bad input parameter
+    post:
+      tags:
+        - Admin
+      summary: adds an agency item
+      operationId: addAgency
+      description: Adds an item to the system
+      parameters:
+        - in: query
+          name: name
+          description: pass direclty the name of a travel agency
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: mail
+          description: mail
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: phone
+          description: phone
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: adress
+          description: adress
+          required: false
+          schema:
+            type: string
+      responses:
+        '201':
+          description: item created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Affiliated'
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+                  $ref: '#/components/schemas/Affiliated'
+        description: Destination item to add
+    put:
+      tags:
+        - Admin
+      summary: modify an agency item
+      operationId: modAgency
+      description: mod an item to the system
+      parameters:
+        - in: query
+          name: name
+          description: pass direclty the name of a travel agency
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: mail
+          description: mail
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: phone
+          description: phone
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: adress
+          description: adress
+          required: false
+          schema:
+            type: string
+      responses:
+        '201':
+          description: item modded
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Affiliated'
+        '400':
+          description: 'invalid input, object invalid'
+    delete:
+      tags:
+        - Admin
+      summary: deletes agencies
+      operationId: deleteAgenciies
+      parameters:
+        - in: query
+          name: name
+          description: pass direclty the name of a travel agency to delete
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: deleted succefully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Affiliated'
+        '400':
+          description: bad input parameter
+
+  /destinations:
+    get:
+      tags:
+        - Admin
+        - Client
+      summary: seraches destinations
+      operationId: searchDestinations
+      description: |
+        By passing in the appropriate options, you can search for
+        available travel destinations in the system
+      parameters:
+        - in: query
+          name: location
+          description: pass direclty the name of a travel destination
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: country
+          description: the country where you want to search for a travel destination
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: affiliated
+          description: enter the name of agencies you want to deal with when searching travel destinations 
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Destination'
+        '400':
+          description: bad input parameter
+    post:
+      tags:
+        - Admin
+      summary: adds an destination item
+      operationId: addDestination
+      description: Adds an item to the system
+      parameters:
+        - in: query
+          name: location
+          description: pass direclty the name of a travel destination
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: country
+          description: the country where you want to search for a travel destination
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: affiliated
+          description: enter the name of agencies you want to deal with when searching travel destinations 
+          required: false
+          schema:
+            type: string
+      responses:
+        '201':
+          description: item created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Destination'
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Destination'
+        description: Destination item to add
+    put:
+      tags:
+        - Admin
+      summary: mod an destination item
+      operationId: modDestination
+      description: Mod an item to the system
+      parameters:
+        - in: query
+          name: location
+          description: pass direclty the name of a travel destination
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: country
+          description: the country where you want to search for a travel destination
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: affiliated
+          description: enter the name of agencies you want to deal with when searching travel destinations 
+          required: false
+          schema:
+            type: string
+      responses:
+        '201':
+          description: item modded
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Destination'
+        '400':
+          description: 'invalid input, object invalid'
+    delete:
+      tags:
+        - Admin
+      summary: deletes destinations
+      operationId: deleteDestinations
+      parameters:
+        - in: query
+          name: name
+          description: pass direclty the name of a travel desetination to delete
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: deleted succefully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Destination'
+        '400':
+          description: bad input parameter
+components:
+  schemas:
+    Destination:
+      type: object
+      required:
+        - id
+        - location
+        - country
+        - description
+        - affiliated
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: LA098
+        location:
+          type: string
+          example: Los-Angeles
+        country:
+          type: string
+          example: USA
+        description:
+          type: string
+          example: Beautifull city of angels
+        affiliated:
+          $ref: '#/components/schemas/Affiliated'
+    Affiliated:
+      required:
+        - name
+        - mail
+        - phone
+        - adress
+      properties:
+        name:
+          type: string
+          example: TUI Corporation
+        homePage:
+          type: string
+          format: url
+          example: 'https://www.TUI.com'
+        phone:
+          type: string
+          example: 0493 66 34 46
+        mail:
+          type: string
+          example: info@tui.be
+      type: object

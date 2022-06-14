@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:simpleType name="TimeType">
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="minutes"/>
+        <xsd:enumeration value="hours"/>
+        <xsd:enumeration value="seconds"/>
+    </xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="guide_Time">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:integer">
+            <xsd:attribute name="unity" type="TimeType" />
+        </xsd:extension> 
+    </xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Ingredient_type">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:float">
+            <xsd:attribute name="name" type="xsd:string"/>
+            <xsd:attribute name="unity" type="xsd:string"/>
+        </xsd:extension> 
+    </xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Dietetic_type">
+    <xsd:simpleContent>
+        <xsd:extension base="xsd:integer">
+            <xsd:attribute name="unity" type="xsd:string"/>
+        </xsd:extension> 
+    </xsd:simpleContent>
+</xsd:complexType>
+<xsd:element name="Recipe">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="title" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="image" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="autor" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name ="Lastname" type="xsd:string"/>
+                        <xsd:element name ="Firstname" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="description" type="xsd:string" minOccurs="1"/>
+            <xsd:element name="guide" minOccurs="1">   
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name ="Time">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="Preparation" type="guide_Time" minOccurs="0" /> 
+                                    <xsd:element name="Cooking" type="guide_Time" minOccurs="0"/>
+                                    <xsd:element name="rest" type="guide_Time" minOccurs="0"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name ="difficulty" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name ="people" minOccurs="0">
+                            <xsd:complexType>
+                                <xsd:simpleContent>
+                                    <xsd:extension base="xsd:integer">
+                                        <xsd:attribute name="unity" type="xsd:string"/>
+                                    </xsd:extension> 
+                                </xsd:simpleContent>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Ingredients" minOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Ingredient" type="Ingredient_type" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Preperation" minOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name ="Step" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="dietetic" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="portion" type="Dietetic_type" minOccurs="0"/>
+                        <xsd:element name="Nutritional_value" type="Dietetic_type" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="tips" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+</xsd:schema>
+        

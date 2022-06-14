@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Encoder les données de la pièce</h1>
+        
+        <form action="/apartment/new" method="POST">
+            <label for="fname">Pièce</label>
+            <input type="text" id="nameID" name="name"><br>
+            <label for="fname">Longueur</label>
+            <input type="number" id="lenghtID" name="lenght" min="0" max="100"><br>
+            <label for="fname">Largeur</label>
+            <input type="number" id="widthID" name="width" min="0" max="100"><br>
+            <input type="submit" value="Enregistrer">
+        </form>
+        <a href="/apartments">Appartement</a>
+    </body>
+</html>

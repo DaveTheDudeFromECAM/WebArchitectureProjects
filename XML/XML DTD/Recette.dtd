@@ -1,0 +1,37 @@
+    <!ELEMENT Recipe (title+,image+,autor?,description+,guide+,Ingredients+,Preperation+,dietetic?,tips?)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT image EMPTY>
+    <!ELEMENT autor (Lastname,Firstname)>
+        <!ELEMENT Lastname (#PCDATA)>
+        <!ELEMENT Firstname (#PCDATA)>
+    <!ELEMENT description (#PCDATA)>
+    <!ELEMENT guide (Time+,difficulty?,people?)>
+    <!ELEMENT Time (Preparation?,Cooking?,rest?)>
+        <!ELEMENT Preparation (#PCDATA)>
+        <!ELEMENT Cooking (#PCDATA)>
+        <!ELEMENT rest (#PCDATA)>
+    <!ELEMENT difficulty (#PCDATA)>
+    <!ELEMENT people (#PCDATA)>
+    <!ELEMENT Ingredients (Ingredient*)>
+        <!ELEMENT Ingredient (#PCDATA)>
+    <!ELEMENT Preperation (Step*)>
+        <!ELEMENT Step (#PCDATA)>
+    <!ELEMENT dietetic (portion?,Nutritional_value?)>
+        <!ELEMENT portion (#PCDATA)>
+        <!ELEMENT Nutritional_value (#PCDATA)>
+    <!ELEMENT tips (#PCDATA)>
+
+    <!ATTLIST people unity CDATA #FIXED "number">
+    <!ATTLIST Preparation unity (minutes|second|hour) "minutes">
+    <!ATTLIST Cooking unity (minutes|second|hour) "minutes">
+    <!ATTLIST rest unity (minutes|second|hour) "minutes">
+    <!ATTLIST Ingredient name CDATA #REQUIRED>
+    <!ATTLIST Ingredient unity CDATA #REQUIRED>
+    <!ATTLIST portion unity (gram|kilogram) "gram">
+    <!ATTLIST Nutritional_value unity (kcal|cal) "kcal">
+    
+    
+    
+    
+    
+    

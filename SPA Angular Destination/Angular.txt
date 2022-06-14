@@ -1,0 +1,6 @@
+https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2
+PS C:\Users\dave> Get-ExecutionPolicy -Scope CurrentUser
+Undefined
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+

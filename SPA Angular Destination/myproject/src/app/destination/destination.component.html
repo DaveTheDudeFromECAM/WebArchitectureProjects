@@ -1,0 +1,9 @@
+<h2>Destination list</h2>
+<div>
+    <button (click)="add()">Add</button>
+</div>
+<ul>
+    <li *ngFor="let p of destinations">
+        {{p.destination_name}}
+    </li>
+</ul>

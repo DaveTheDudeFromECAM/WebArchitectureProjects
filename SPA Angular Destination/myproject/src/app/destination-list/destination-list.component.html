@@ -1,0 +1,19 @@
+<h2>Destination</h2>
+
+<div *ngFor="let destination of destinations">
+
+  <h3>
+    <a [title]="destination.name + ' details'">
+      {{ destination.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="destination.description">
+    Description: {{ destination.description }}
+  </p>
+
+  <button type="button" (click)="share()">
+  Share
+</button>
+
+</div>

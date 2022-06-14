@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO</title>
+  </head>
+  <body>
+    <H1>STATION</H1>
+      <h2>Temperature</h2>
+    <ul id="temperature"></ul>
+
+    <h2>Humidity</h2>
+    <ul id="humidity"></ul>
+
+    <h1>CAPTEUR</h1>
+    <form id="form" action="">
+      <input id="input1" autocomplete="off" /><button>humidity</button>
+      <input id="input2" autocomplete="off" /><button>temperature</button>
+    </form>
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script>
+        var socket = io();
+      
+        var form = document.getElementById('form');
+        var h = document.getElementById('input1');
+        var t = document.getElementById('input2');
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (h.value) {
+            socket.emit('humidity', h.value);
+            h.value = '';
+          }
+          else if (t.value) {
+            socket.emit('temperature', t.value);
+            t.value = '';
+          }
+        });
+
+        socket.on('humidity', function(h) {
+            document.getElementById("humidity").innerHTML = "now : " + h + "%";
+        });
+
+        socket.on('temperature', function(t) {
+            document.getElementById("temperature").innerHTML = "now : " + t + "°C"
+        });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Recipe SYSTEM "Recette.dtd">
+
+<Recipe>
+    <title>Pâte à crêpes simple et rapide</title>
+    <image></image>
+    <description>
+        À la fête de la Chandeleur ou au Mardi Gras, la tradition veut que l'on fasse des crêpes. En 
+        Bretagne, les crêpes font parties de la culture locale et se consomment très souvent sucrées 
+        avec de la farine de froment ou salées avec de la farine de blé noir. Seulement voilà, pas de 
+        bonnes crêpes sans une bonne pâte à crêpes simple et rapide à faire ! La recette de crêpe fera
+        plaisir à tous les gourmands et les bouches sucrées  
+    </description>
+    <guide>
+        <Time>
+            <Preparation unity = "minutes">15</Preparation>
+            <Cooking unity = "minutes">20</Cooking>
+            <rest unity = "hour">1</rest>
+        </Time>
+        <difficulty>Facile</difficulty>
+        <people unity = "number">4</people>
+    </guide>
+    <Ingredients>
+        <Ingredient name = "milk" unity = "liter">0.5</Ingredient>
+        <Ingredient name = "egg" unity = "number">3</Ingredient> 
+        <Ingredient name = "flour" unity = "gram">250</Ingredient>
+        <Ingredient name = "oil soup" unity = "spoon">2</Ingredient>
+        <Ingredient name = "salt" unity = "pinch">1</Ingredient>
+        <Ingredient name = "water soup" unity = "spoon">1</Ingredient>
+        <Ingredient name = "water soup" unity = "spoon">2</Ingredient>
+    </Ingredients>
+    <Preperation>
+        <Step>Mettez la farine dans un grand saladier ou cul de poule. Faites un puits, et cassez-y les oeufs entiers.</Step>
+        <Step>Ajoutez l'huile, le sel et un peu de lait. Travaillez énergiquement la pâte avec une cuillère (en bois, de préférence), pour la rendre légère.</Step>
+        <Step>Mouillez progressivement avec le lait, jusqu'à ce que la pâte devienne homogène.</Step>
+        <Step>Vous pouvez alors ajouter de l'extrait de fleur d'oranger, un peu de jus de citron, de la vanille, etc.</Step>
+        <Step>Ajoutez ensuite 1 à 2 c. à soupe d'eau.</Step>
+        <Step>Laissez reposer la pâte à crêpes simple et rapide à faire pendant 1 heure au moins, recouverte d'une serviette ou d'un chiffon propre.</Step>
+        <Step>Versez une louche de pâte dans la poêle, et laissez cuire 3 min chaque crêpe.</Step>
+    </Preperation>
+    <dietetic>
+        <portion unity ="gram">100</portion>
+        <Nutritional_value unity ="kcal">300</Nutritional_value>
+    </dietetic>
+    <tips>
+        Il existe plusieurs recettes de pâte à crêpes simple et rapide, sucrées ou salées, qui plairont à 
+        tous. La pâte à crêpes est une base assez simple, il suffit de l'agrémenter selon vos envies : 
+        crêpe suzette, crêpe au sarrasin ou simplement crêpe au chocolat ou crêpe au beurre. Dans la
+        plus pure tradition, nous vous conseillons de manger vos crêpes accompagnées de cidre brut.
+    </tips>
+</Recipe>

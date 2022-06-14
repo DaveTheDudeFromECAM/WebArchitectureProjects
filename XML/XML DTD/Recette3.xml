@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Recipe SYSTEM "Recette.dtd">
+<Recipe>
+    <title>Recette Soufflé léger au chou-fleur</title>
+    <image></image>
+    <autor>
+        <Lastname>Bonneau</Lastname>
+        <Firstname>Isabelle</Firstname>
+    </autor>
+    <description>Ce soufflé est très facile à réaliser, très léger et moelleux, un bon accompagnement pour viandes et poissons !</description>
+    <guide>
+        <Time>
+            <Preparation unity = "minutes">20</Preparation>
+            <Cooking unity = "minutes">40</Cooking>
+        </Time>
+        <difficulty>Facile</difficulty>
+        <people unity = "number">4</people>
+    </guide>
+    <Ingredients>
+        <Ingredient name = "cauliflower" unity = "gram">600</Ingredient>
+        <Ingredient name = "20% cottage cheese" unity = "gram">200</Ingredient> 
+        <Ingredient name = "grated cheese" unity = "gram">40</Ingredient>
+        <Ingredient name = "egg" unity = "number">2</Ingredient>
+        <Ingredient name = "freshly grated nutmeg" unity = "number">1</Ingredient>
+        <Ingredient name = "sel" unity = "pinch">1</Ingredient>
+        <Ingredient name = "pepper" unity = "pinch">1</Ingredient>
+    </Ingredients>
+    
+    <Preperation>
+        <Step>Faites cuire le chou-fleur à la vapeur après l'avoir lavé. Préchauffez votre four à 180°C.</Step>
+        <Step>Séparez les blancs des jaunes d'oeufs. Mixez le chou-fleur avec les jaunes et le fromage blanc. Salez, poivrez et ajoutez la noix de muscade ainsi que le fromage râpé.</Step>
+        <Step>Montez les blancs d'oeufs en neige et incorporez-les délicatement au chou-fleur.</Step>
+        <Step>Versez le tout dans un plat allant au four ou 4 petits plats individuels et faites cuire au four à 180°c entre 25 et 30 minutes. N'ouvrez surtout pas la porte du four avant la fin de la cuisson, le soufflé retomberait !</Step>
+    </Preperation>
+    <tips>Servez chaud dès que le dessus est doré.</tips>
+</Recipe>

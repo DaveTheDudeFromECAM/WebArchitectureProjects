@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Liste des pièces de l'appartement</h1>
+        
+        <ul>
+            <% romeList.forEach(function(room,index) { %>
+                <li>Pièce : <%= room.name %> <%= room.area %>m²</li>
+            <% }); %>
+            <li>Surface totale : <%= total %> m²</li>
+        </ul>
+        <a href="/apartment/add">Encoder une autre pièce</a>
+    </body>
+</html>

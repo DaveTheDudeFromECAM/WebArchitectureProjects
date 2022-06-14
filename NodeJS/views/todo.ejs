@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <h1>TODO</h1>
+    <h2>Liste des tâches</h2>
+
+    <ul>
+
+        <% tasks.forEach(function(list, nb) { %>
+            <li><%=list%><a href="/del/<%=nb%>"> delete</a></li>
+            <%}); %>
+    </ul>
+
+      <form action="/add" method="POST">
+        <fieldset>
+          <h2>Ajout tâche</h2>
+          <input type ="text" id = 'new_task' name="new_task" required>
+          <br><br>
+          <button type ="submit">Submit</button>
+        </fieldset>
+       </form>
+</body>
+</html>
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Recipe SYSTEM "Recette.dtd">
+
+<Recipe>
+    <title>Fondant au chocolat ultra facile</title>
+
+    <image></image>
+
+    <description>Dessert - Facile - Bon marché - Végétarien</description>
+
+    <guide>
+        <Time>
+            <Preparation unity = "minutes">5</Preparation>
+            <Cooking unity = "minutes">7</Cooking>
+        </Time>
+    </guide>
+
+    <Ingredients>
+        <Ingredient name = "chocolate" unity = "gram">600</Ingredient>
+        <Ingredient name = "sugar" unity = "gram">200</Ingredient>
+        <Ingredient name = "egg" unity = "number">8</Ingredient>
+    </Ingredients>
+    
+    <Preperation>
+        <Step>Préchauffer le four à 210°C (thermostat 7).</Step>
+        <Step>Faire fondre le chocolat au bain-marie.</Step>
+        <Step>Pendant ce temps, mélanger les oeufs, le sucre et faire blanchir.</Step>
+        <Step>Quand le chocolat est fondu, l'incorporer au mélange oeufs et sucre.</Step>
+        <Step>Beurrer un moule à manqué ou des moules individuels (de préférence en silicone) et y verser la préparation.</Step>
+        <Step>Faire cuire le fondant pendant environ 7 à 10 minutes.</Step>
+        <Step>Attention, vérifier la cuisson en plantant la pointe du couteau au milieu du fondant.</Step>
+    </Preperation>
+
+    <dietetic></dietetic>
+    
+    <tips></tips>
+</Recipe>
